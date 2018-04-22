@@ -1,6 +1,7 @@
 # User-Agent Lists
 
 Sometimes you need change the _User-Agent_ string used when making **alot** of requests to the same server(s) often.
+- **Research Purposes ONLY**
 
 That can be a hard thing to do if you only know a handful of user agents.
 
