@@ -1,11 +1,15 @@
 from itertools import cycle
 import ujson
 import random
+import os
+
+
+current_path = os.path.dirname(os.path.realpath(__file__))
 
 class UserAgents():
     def __init__(self,browser):
 
-        chrome_file = 'json/chrome.json'
+        chrome_file = os.path.join(current_path,'json/chrome.json')
         dict_data = dict()
 
         if browser == 'chrome':
