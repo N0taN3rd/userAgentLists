@@ -71,5 +71,11 @@ techpatterns_com_useragentswitcher.(csv|json) provides 830 User-Agent strings co
 - internet-explorer
 - android
 
+### User-Agents Included By Each List
+import uagents
+from uagents import useragentlists
+print(next(ua.cuseragent))
+
+
 # License
 MIT
