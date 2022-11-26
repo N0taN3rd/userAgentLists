@@ -27,7 +27,10 @@ class UserAgents():
 
     def return_ua(self):
         try:
-            return next(self.iterator)
+            ua = next(self.iterator)
+            return ua['ua']
         except StopIteration as si:
             self.iterator = self._gen_iter(profile=self.profile)
-            return next(self.iterator)
+            ua = next(self.iterator)
+            return ua['ua']
+            
