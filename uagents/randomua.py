@@ -4,9 +4,7 @@ from pathlib import Path
 
 
 current_path = os.path.dirname(os.path.realpath(__file__))
-path = Path(current_path).parent.absolute()
-base_path = os.path.join(path,'csv')
-
+base_path = os.path.join(current_path,'csv')
 
 class UserAgents():
 
