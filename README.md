@@ -72,16 +72,19 @@ techpatterns_com_useragentswitcher.(csv|json) provides 830 User-Agent strings co
 - android
 
 ### User-Agents Included By Each List (patched by pankaj)
+
+```sh
+pip install --upgrade git+https://github.com/Rho-AI-Automation/userAgentLists.git
+```
+
 ```python
 >>> from uagents import UserAgents
->>> ua_obj = UserAgents()
->>> ua_generator = ua_obj.gen_ua(profile='firefox')
->>> next(ua_generator)
+>>> firefox_ua = UserAgents(profile='firefox')
+>>> chrome_ua = UserAgents(profile='chrome')
+>>> firefox_ua.return_ua()
 'Mozilla/5.0 (Windows NT 5.1; rv:7.0.1) Gecko/20100101 Firefox/7.0.1'
->>> next(ua_generator)
-'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0'
->>> next(ua_generator)
-'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1'
+>>> chrome_ua.return_ua()
+'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36'
 >>> 
 ```
 
