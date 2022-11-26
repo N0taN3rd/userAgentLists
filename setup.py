@@ -1,5 +1,4 @@
 from setuptools import setup
-from glob import glob
 import os
 current_path = os.path.dirname(os.path.realpath(__file__))
 
