@@ -8,6 +8,5 @@ setup(
     version='1.2',
     packages=['uagents'],
     include_package_data=True,
-    package_data = {"uagents": ["json/*.json","csv/*.csv"]}
 
 )
