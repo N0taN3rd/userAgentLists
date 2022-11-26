@@ -10,16 +10,26 @@ base_path = os.path.join(path,'csv')
 
 class UserAgents():
 
-    def __init__(self):
+    def __init__(self,profile):
         self.dict_files = dict()
+        self.profile = profile 
         
         for ufile in os.listdir(base_path):
             file_path = os.path.join(base_path,ufile)
             self.dict_files[ufile.split('.')[0]] = file_path
-
-    def gen_ua(self,profile):
+        
+        self.iterator = self._gen_iter(profile=profile)
+    
+    def _gen_iter(self,profile):
         file_path =self.dict_files[profile]
         with open(file_path,'r') as f:
             csvr = csv.DictReader(f)
             for line in csvr:
-                yield line['ua']
+                yield line
+
+    def return_ua(self):
+        try:
+            return next(self.iterator)
+        except StopIteration as si:
+            self.iterator = self._gen_iter(profile=self.profile)
+            return next(self.iterator)
