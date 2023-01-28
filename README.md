@@ -73,10 +73,6 @@ techpatterns_com_useragentswitcher.(csv|json) provides 830 User-Agent strings co
 
 ### User-Agents Included By Each List (patched by pankaj)
 
-```sh
-pip install --upgrade git+https://github.com/Rho-AI-Automation/userAgentLists.git
-```
-
 ```python
 >>> from uagents import UserAgents
 >>> firefox_ua = UserAgents(profile='firefox')
